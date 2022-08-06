@@ -11,7 +11,7 @@ import java.util.List;
 public class OrderService {
     private List<Order> orderList;
 
-    public OrderService(){
+    public OrderService() {
         List<Meal> mealList1 = new ArrayList<>();
         mealList1.add(new Meal("hamburger", 100, "This is delicious"));
         mealList1.add(new Meal("ice_cream", 200, "This is delicious"));
@@ -21,29 +21,36 @@ public class OrderService {
         mealList2.add(new Meal("coca", 400, "This is delicious"));
 
         this.orderList = new ArrayList<>();
-        this.orderList.add(new Order(1,"Leo", mealList1));
-        this.orderList.add(new Order(2,"Leo", mealList2));
+        this.orderList.add(new Order(1, "Leo", mealList1));
+        this.orderList.add(new Order(2, "Leo", mealList2));
     }
 
-    public List<Order> getAllOrders(){
+    public List<Order> getAllOrders() {
         return this.orderList;
     }
 
-    public Order getOrderById(int seq){
-        for(Order order:this.orderList){
-            if(order.getSeq()==seq){
+    public Order getOrderById(int seq) {
+        for (Order order : this.orderList) {
+            if (order.getSeq() == seq) {
                 return order;
             }
         }
         return null;
     }
 
-    public Order createOrder(Order order){
-        this.orderList.add(order);
-        return order;
+    public Order createOrder(Order order) {
+        for (int i = 1; i < this.orderList.size(); i++) {
+            if (this.orderList.get(i).getSeq() == order.getSeq()) {
+                System.out.println("新增失敗，單號重複，請再確認");
+            } else {
+                this.orderList.add(order);
+            }
+            return order;
+        }
+        return null;
     }
 
-    public Order updateOrder(int seq,Order order) {
+    public Order updateOrder(int seq, Order order) {
         for (Order updatedOrder : this.orderList) {
             if (seq == updatedOrder.getSeq()) {
                 updatedOrder.setWaiter(order.getWaiter());
@@ -55,9 +62,9 @@ public class OrderService {
         return null;
     }
 
-    public Order deleteOrder(int seq){
-        for(Order deletedOrder:this.orderList){
-            if(seq == deletedOrder.getSeq()){
+    public Order deleteOrder(int seq) {
+        for (Order deletedOrder : this.orderList) {
+            if (seq == deletedOrder.getSeq()) {
                 this.orderList.remove(deletedOrder);
                 return deletedOrder;
             }
