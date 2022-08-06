@@ -59,7 +59,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"seq\": 3,\r\n    \"totalPrice\": 3000,\r\n    \"waiter\": \"Leo\",\r\n    \"mealList\": [\r\n        {\r\n            \"name\": \"fries\",\r\n            \"price\": 300,\r\n            \"description\": \"This is delicious\"\r\n        },\r\n        {\r\n            \"name\": \"coca\",\r\n            \"price\": 300,\r\n            \"description\": \"This is delicious\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"seq\": 3,\r\n    \"totalPrice\": 0,\r\n    \"waiter\": \"Leo\",\r\n    \"mealList\": [\r\n        {\r\n            \"name\": \"fries\",\r\n            \"price\": 300,\r\n            \"description\": \"This is delicious\"\r\n        },\r\n        {\r\n            \"name\": \"coca\",\r\n            \"price\": 300,\r\n            \"description\": \"This is delicious\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"seq\": 1,\r\n    \"totalPrice\": 55000,\r\n    \"waiter\": \"Leo\",\r\n    \"mealList\": [\r\n        {\r\n            \"name\": \"fries\",\r\n            \"price\": 5500,\r\n            \"description\": \"This is delicious\"\r\n        },\r\n        {\r\n            \"name\": \"coca\",\r\n            \"price\": 5500,\r\n            \"description\": \"This is delicious\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"seq\": 1,\r\n    \"totalPrice\": 0,\r\n    \"waiter\": \"Leo\",\r\n    \"mealList\": [\r\n        {\r\n            \"name\": \"fries\",\r\n            \"price\": 5500,\r\n            \"description\": \"This is delicious\"\r\n        },\r\n        {\r\n            \"name\": \"coca\",\r\n            \"price\": 5500,\r\n            \"description\": \"This is delicious\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

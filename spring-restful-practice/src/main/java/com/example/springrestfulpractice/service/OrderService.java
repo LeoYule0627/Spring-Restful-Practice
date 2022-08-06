@@ -39,15 +39,15 @@ public class OrderService {
     }
 
     public Order createOrder(Order order) {
-        for (int i = 1; i < this.orderList.size(); i++) {
-            if (this.orderList.get(i).getSeq() == order.getSeq()) {
+        for(Order createdDealer:this.orderList){
+            if(order.getSeq()==createdDealer.getSeq()){
                 System.out.println("新增失敗，單號重複，請再確認");
-            } else {
-                this.orderList.add(order);
+                return order;
             }
-            return order;
         }
-        return null;
+        this.orderList.add(order);
+        System.out.println("新增成功");
+        return order;
     }
 
     public Order updateOrder(int seq, Order order) {
@@ -56,6 +56,7 @@ public class OrderService {
                 updatedOrder.setWaiter(order.getWaiter());
                 updatedOrder.setTotalPrice(order.getTotalPrice());
                 updatedOrder.setMealList(order.getMealList());
+                System.out.println("修改成功");
                 return updatedOrder;
             }
         }
@@ -66,6 +67,7 @@ public class OrderService {
         for (Order deletedOrder : this.orderList) {
             if (seq == deletedOrder.getSeq()) {
                 this.orderList.remove(deletedOrder);
+                System.out.println("刪除成功");
                 return deletedOrder;
             }
         }
